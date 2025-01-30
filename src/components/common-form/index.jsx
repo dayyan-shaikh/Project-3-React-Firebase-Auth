@@ -55,11 +55,11 @@ function CommonForm({
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="flex flex-col gap-5 mt-5">
       {formControls.map((singleFormControls) =>
         renderFormElement(singleFormControls, formData)
       )}
-      <button type="submit">{buttonText || "Submit"}</button>
+      <button type="submit" className="bg-black text-white px-3 py-2 rounded-sm cursor-pointer">{buttonText || "Submit"}</button>
     </form>
   );
 }

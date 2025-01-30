@@ -20,10 +20,9 @@ function LoginPage() {
   }
 
   return (
-    <div className="w-full max-w-sm mx-auto rounded-lg shadow-lg">
+    <div className="w-full max-w-sm mx-auto rounded-lg shadow-lg mt-5">
       <div className="px-6 py-5">
-        <h1>Welcome back</h1>
-        <p>Login Page</p>
+        <h1 className="text-center items-center">Welcome back to Login page</h1>
         <CommonForm
           formControls={loginFormControls}
           formData={loginFormData}

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import auth from "../../firebaseConfig";
 
 function RegisterPage() {
-  const { registerFormData, setRegisterFormData, registerWithFirebase, setLoaing} =
+  const { registerFormData, setRegisterFormData, registerWithFirebase, setLoading} =
     useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ function RegisterPage() {
               displayName: registerFormData.name,
             }).then(()=>{
               console.log(auth.currentUser.displayName,"auth.currentUser.displayName")
-              setLoaing(false)
+              setLoading(false)
               if(auth.currentUser.displayName) navigate('/login')
             })
           } catch (error) {
@@ -35,10 +35,9 @@ function RegisterPage() {
   }
 
   return (
-    <div className="w-full max-w-sm mx-auto rounded-lg shadow-lg">
+    <div className="w-full max-w-sm mt-5 mx-auto rounded-lg shadow-lg">
       <div className="px-6 py-5  font-semibold">
-        <h3>Welcome Back</h3>
-        <p>Register Page</p>
+        <h3 className="text-center">Welcome to Register page</h3>
         <CommonForm
           formControls={registerFormControls}
           formData={registerFormData}
