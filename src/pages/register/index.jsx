@@ -3,7 +3,7 @@ import CommonForm from "../../components/common-form";
 import { AuthContext } from "../../context";
 import { registerFormControls } from "../../config";
 import { updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import auth from "../../firebaseConfig";
 
 function RegisterPage() {
@@ -45,7 +45,9 @@ function RegisterPage() {
           onSubmit={handleRegisterFormSubmit}
           buttonText={"Register"}
         />
-        <button className="w-full block px-5 py-2 mt-2 bg-black text-white border rounded-sm">Log In</button>
+        <Link to={"/login"}>
+        <button className="w-full block px-5 py-2 mt-2 bg-black text-white border rounded-sm cursor-pointer">Log In</button>
+        </Link>
       </div>
     </div>
   );
