@@ -6,6 +6,7 @@ function CommonInput({ type, placeholder, name, value, onChange, className }) {
       value={value}
       name={name}
       onChange={onChange}
+      required={true}
       className={
         className || "w-full block px-5 py-2 mt-2 text-black border rounded-sm"
       }

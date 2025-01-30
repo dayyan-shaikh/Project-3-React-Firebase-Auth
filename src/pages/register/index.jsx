@@ -45,6 +45,7 @@ function RegisterPage() {
           onSubmit={handleRegisterFormSubmit}
           buttonText={"Save"}
         />
+        <button className="w-full block px-5 py-2 mt-2 bg-black text-white border rounded-sm">Log In</button>
       </div>
     </div>
   );
