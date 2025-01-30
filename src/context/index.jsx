@@ -42,6 +42,7 @@ export default function AuthState({ children }) {
   useEffect(() => {
     const checkAuthState = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoginFormData("")
       setLoading(false);
     });
     return () => {
