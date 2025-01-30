@@ -24,7 +24,8 @@ function RegisterPage() {
             }).then(()=>{
               console.log(auth.currentUser.displayName,"auth.currentUser.displayName")
               setLoading(false)
-              if(auth.currentUser.displayName) navigate('/login')
+              if(auth.currentUser.displayName) navigate('/profile')
+              setRegisterFormData("")
             })
           } catch (error) {
             console.error("Profile update error:", error);

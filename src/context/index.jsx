@@ -36,13 +36,15 @@ export default function AuthState({ children }) {
   }
 
   function handleLogout(){
-    return signOut(auth);
-  }
+    return (
+      signOut(auth),
+      setLoginFormData("")
+    )
+    }
 
   useEffect(() => {
     const checkAuthState = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoginFormData("")
       setLoading(false);
     });
     return () => {
