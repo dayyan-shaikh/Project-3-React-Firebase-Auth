@@ -2,21 +2,22 @@ import { useContext } from "react";
 import CommonForm from "../../components/common-form";
 import { loginFormControls } from "../../config";
 import { AuthContext } from "../../context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function LoginPage() {
-    const { loginFormData, setLoginFormData, loginWithFirebase, setLoading} = useContext(AuthContext);
-    const navigate = useNavigate()
-  function handleLoginOnSubmit(event){
+  const { loginFormData, setLoginFormData, loginWithFirebase, setLoading } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  function handleLoginOnSubmit(event) {
     event.preventDefault();
 
     loginWithFirebase().then((result) => {
-        console.log(result,'result');
-        if(result){ 
-            setLoading(false);
-            navigate('/profile')
-        }
-    })
+      console.log(result, "result");
+      if (result) {
+        setLoading(false);
+        navigate("/profile");
+      }
+    });
   }
 
   return (
@@ -30,6 +31,11 @@ function LoginPage() {
           buttonText={"Login"}
           onSubmit={handleLoginOnSubmit}
         />
+        <Link to={"/"}>
+          <button className="w-full block px-5 py-2 mt-2 bg-black text-white border rounded-sm cursor-pointer">
+            Back to Register
+          </button>
+        </Link>
       </div>
     </div>
   );
